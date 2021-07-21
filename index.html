@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
     <style>
 
         body,
@@ -15,6 +18,7 @@
         button {
             font-family: 'Noto Sans', sans-serif;
             font-size: .9rem;
+            text-align: center;
         }
         
         img {
@@ -24,6 +28,8 @@
         
         input {
             display: block;
+            position: relative;
+            overflow: hidden;
             margin: 0 auto 3.3vh;
             border-radius: 25px;
             font-size: 1rem;
@@ -32,7 +38,40 @@
             height: 2em;
             border: 1px solid rgba(211,211,211,0.8);
             padding: .4em;
+            /* background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png) 0 0 no-repeat; */
         }
+
+        /* input::before {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            top: 50%;
+            right: 60px;
+            z-index: -1;
+            background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png) 0 0 no-repeat;
+            transform: scale(50%);
+            }
+        
+        input {
+            position: relative;
+            overflow: hidden;
+            transform: rotate(30deg);
+            }
+
+        input::before {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            z-index: -1;
+            background: url(background.png) 0 0 repeat;
+            transform: rotate(-30deg);
+            } */
+
+
 
         input:hover {
             box-shadow: 0 2px 5px rgba(211,211,211,0.8);
@@ -44,7 +83,7 @@
             border-radius: 5px;
             border-style: none;
             padding: .8em 1.4em;
-            margin: 0 .3em;
+            margin: .2em .3em;
         }
 
         button:hover {
@@ -53,24 +92,93 @@
             cursor: pointer;
         }
 
-        .btn-group {
+        /* .btn-group {
             text-align: center;
+        } */
+        
+        .material-icons {
+            font-family: 'Material Icons';
+            font-size: 20px;  /* Preferred icon size */
+            /* display: inline-block; */
+            color: rgb(160, 160, 160);
+
+
+            /* Support for all WebKit browsers. */
+            -webkit-font-smoothing: antialiased;
+            /* Support for Safari and Chrome. */
+            text-rendering: optimizeLegibility;
+
+            /* Support for Firefox. */
+            -moz-osx-font-smoothing: grayscale;
+
+            /* Support for IE. */
+            font-feature-settings: 'liga';
         }
 
+        /* .material-icons .md-dark { 
+            color: rgba(211,211,211,0.8); 
+        }
+        
+        .material-icons .md-18 { 
+            font-size: 24px; 
+        } */
 
+        /* .material-icons {
+            position: absolute;
+        } */
+
+        
+        /* background: url(images/comment-author.gif) no-repeat scroll 7px 7px;
+
+        padding-left:30px;
+
+         */
+
+        .input-group {
+            position: relative;
+            /* width: 100%;
+            margin-bottom: 10px; */
+            
+        }
+        
+        .input-group i {
+            display: block;
+            position: absolute;            
+            top: 14px;
+            left: 0;
+            /* padding: 10px; */
+            /* color: black; */
+            min-width: 50px;
+            text-align: center;
+            
+
+        }
+
+        /* .search-icon {
+            position: relative;
+            z-index: -1;
+        } */
+          
+   
+
+
+
+    
     </style>
 </head>
 <body>
-
-    <img src="https://web.archive.org/web/20191201000239im_/https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="">    
-    <input type="text">
-    
-    <!-- <span class="material-icons-outlined">search</span> -->
+    <img src="https://web.archive.org/web/20191201000239im_/https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="">
+<div style="max-width:400px;margin:auto">
+    <div class="input-group">       
+        <input type="text">
+        <i class="material-icons md-24 search-icon">search</i>
+    </div>
     
     <div class="btn-group">
         <button>Google Search</button>
         <button>I'm Feeling Lucky</button>
     </div>
+</div>
     
 </body>
 </html>

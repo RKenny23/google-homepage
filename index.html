@@ -13,172 +13,188 @@
 
     <style>
 
-        body,
-        input,
-        button {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        input:focus,
+        button:focus {
+            outline: none;
+        }
+      
+        html {
             font-family: 'Noto Sans', sans-serif;
-            font-size: .9rem;
-            text-align: center;
+            font-size: 1rem;            
+        }
+
+        .main {
+            display: flex;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1rem;
+            flex-direction: column;
+
         }
         
-        img {
-            display: block;
-            margin: 28vh auto 3.2vh;
+        .logo {
+            margin: 15rem auto 1.8rem;
         }
         
-        input {
-            display: block;
+        .input-group {
             position: relative;
-            overflow: hidden;
-            margin: 0 auto 3.3vh;
+            width: 100%;
+            margin: 0 auto;
+            
+        }
+
+        .search-input {
+            position: relative;
+            width: 100%;
+            height: 2.8rem;
+            margin: 0 auto 1.9rem;
             border-radius: 25px;
             font-size: 1rem;
-            max-width: 550px;
-            width: 100%;
-            height: 2em;
             border: 1px solid rgba(211,211,211,0.8);
-            padding: .4em;
-            /* background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png) 0 0 no-repeat; */
+            padding: .7rem 3rem .75rem;
         }
 
-        /* input::before {
-            content: "";
-            position: absolute;
-            width: 50%;
-            height: 50%;
-            top: 50%;
-            right: 60px;
-            z-index: -1;
-            background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Magnifying_glass_icon.svg/490px-Magnifying_glass_icon.svg.png) 0 0 no-repeat;
-            transform: scale(50%);
-            }
-        
-        input {
-            position: relative;
-            overflow: hidden;
-            transform: rotate(30deg);
-            }
-
-        input::before {
-            content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            z-index: -1;
-            background: url(background.png) 0 0 repeat;
-            transform: rotate(-30deg);
-            } */
-
-
-
-        input:hover {
+        .search-input:hover {
             box-shadow: 0 2px 5px rgba(211,211,211,0.8);
         }
-
-
-        button {
-            background: rgb(250, 250, 250);
-            border-radius: 5px;
-            border-style: none;
-            padding: .8em 1.4em;
-            margin: .2em .3em;
+        
+        .input-group i {
+            display: flex;
+            position: absolute;            
+            width: 100%;
+            top: 13px;
+            left: 15px;
+            max-width: 24px;
         }
-
-        button:hover {
-            border: 1px solid rgba(185, 185, 185, 0.5);
-            box-shadow: 0 2px 2px rgba(211,211,211,0.8);
-            cursor: pointer;
-        }
-
-        /* .btn-group {
-            text-align: center;
-        } */
         
         .material-icons {
             font-family: 'Material Icons';
-            font-size: 20px;  /* Preferred icon size */
-            /* display: inline-block; */
+            font-size: 20px;
+            display: flex;
             color: rgb(160, 160, 160);
-
-
+                        
             /* Support for all WebKit browsers. */
             -webkit-font-smoothing: antialiased;
             /* Support for Safari and Chrome. */
-            text-rendering: optimizeLegibility;
-
+            text-rendering: optimizeLegibility;            
             /* Support for Firefox. */
-            -moz-osx-font-smoothing: grayscale;
-
+            -moz-osx-font-smoothing: grayscale;           
             /* Support for IE. */
             font-feature-settings: 'liga';
         }
 
-        /* .material-icons .md-dark { 
-            color: rgba(211,211,211,0.8); 
-        }
-        
-        .material-icons .md-18 { 
-            font-size: 24px; 
-        } */
-
-        /* .material-icons {
-            position: absolute;
-        } */
-
-        
-        /* background: url(images/comment-author.gif) no-repeat scroll 7px 7px;
-
-        padding-left:30px;
-
-         */
-
-        .input-group {
-            position: relative;
-            /* width: 100%;
-            margin-bottom: 10px; */
-            
-        }
-        
-        .input-group i {
-            display: block;
-            position: absolute;            
-            top: 14px;
-            left: 0;
-            /* padding: 10px; */
-            /* color: black; */
-            min-width: 50px;
+        .btn-group {
             text-align: center;
-            
-
+        }
+        
+        button {
+        font-size: 0.9rem;
+        border-radius: 5px;
+        border-style: none;
+        transition: 0.2s;
+        }
+        
+        
+        .search {
+            background: rgb(250, 250, 250);
+            padding: .5rem 1rem;
+            margin: 0 .25rem;  
+        }
+        
+        button:hover {
+            border: 1px solid rgba(185, 185, 185, 0.5);
+            box-shadow: 0 1px 2px rgba(211,211,211,0.8);
+            cursor: pointer;
         }
 
-        /* .search-icon {
-            position: relative;
-            z-index: -1;
-        } */
-          
-   
+        nav {
+            font-size: 0.9rem;
+            /* height: 50px; */
+            /* background:blueviolet; */
+        }
 
+        .left,
+        .right {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-content: center;
+        }
 
+        .right {
+            justify-content: flex-end;
+            /* padding: 0.2rem .3rem; */
+        }
 
-    
-    </style>
+        ul {
+            display: flex;
+            /* justify-content: space-evenly; */
+            align-items: center;
+            padding: 1rem;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .sign-in {
+            background: blue;
+            color: white;
+            width: 100px;
+            margin: 0.8rem 1.2rem;
+            padding: 0.5rem 0;
+        }
+        
+        
+        
+        </style>
 </head>
 <body>
-    <img src="https://web.archive.org/web/20191201000239im_/https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="">
-<div style="max-width:400px;margin:auto">
-    <div class="input-group">       
-        <input type="text">
-        <i class="material-icons md-24 search-icon">search</i>
+    <header>
+        <nav>
+            <div class="left">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Store</a></li>
+                </ul>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#">Gmail</a></li>
+                    <li><a href="#">Images</a></li>
+                    <li><a href="#"><i class="material-icons">search</i></a></li>
+                </ul>    
+                <button class="sign-in">Sign In</button></li>
+                
+            </div>
+        </nav>
+
+    </header>
+    <div class="main">
+        <img class="logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="">
+        <div class="input-group">
+            <input class="search-input" type="search">
+            <i class="material-icons">search</i>
+        </div>
+        
+        <div class="btn-group">
+            <button class="search">Google Search</button>
+            <button class="search">I'm Feeling Lucky</button>
+        </div>
     </div>
-    
-    <div class="btn-group">
-        <button>Google Search</button>
-        <button>I'm Feeling Lucky</button>
-    </div>
-</div>
     
 </body>
 </html>

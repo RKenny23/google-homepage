@@ -58,6 +58,10 @@
             padding-left: 1rem;
         }
 
+        .footer-nav ul > li > a, p {
+            color: rgb(124, 124, 124);            
+        }
+
         nav > ul > li:hover {
             text-decoration: underline;
 
@@ -75,11 +79,10 @@
             margin: 0 auto;
             padding: 1.5rem;
             flex-direction: column;
-
         }
         
         .logo {
-            margin: 11rem auto 1.8rem;
+            margin: 16vh auto 1.8rem;
         }
         
         .input-group {
@@ -182,15 +185,17 @@
 
 
         footer {
+            display: flex;
             flex-direction: column;
             background-color: rgb(240, 240, 240);
             position: fixed;
             bottom: 0;
             width: 100%;
+            flex-wrap: wrap;
         }
 
         footer > nav > ul > li {
-            padding: 1rem;
+            padding: 0.5rem 1rem;
         }
 
 
@@ -199,6 +204,8 @@
             justify-content: flex-start;
             /* padding-left: 1.5rem; */
             align-items: center;
+            min-width: 20%;
+            order: 1;
         }
 
         .footer-center {
@@ -206,6 +213,8 @@
             justify-content: center;
             align-items: center;
             /* padding-right: 8rem; */
+            order: 2;
+            min-width: 50vw;
             
         }
 
@@ -214,17 +223,18 @@
             justify-content: flex-end;
             /* padding-right: 1.5rem; */
             align-items: center;
+            /* min-width: 20%; */
+            order: 3;
         }
 
         .footer-nav {
-
+            padding: 0.5rem 1.5rem;
         }
 
                 
-        @media (max-width: 1200px) {
+        @media (max-width: 900px) {
             .footer-center {
-                order: 0;
-                width: 100%;
+                width: 50vw;
                 justify-content: center;
             }
 
@@ -238,11 +248,40 @@
             .footer-right {
                 justify-content: center;
             }
+            .footer-center {
+                order: 0;
+            }
         } 
-        
-        
-        
-        
+
+        @media (max-height: 600px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            main {
+                margin-bottom: 2rem;
+            }
+
+            footer {
+                position: relative;
+            }
+        }
+
+        /* @media (max-height: 570px) and (max-width: 630px) {
+            body {
+                overflow-x: hidden;
+
+            }
+            main {
+                margin-bottom: 13px;
+
+            }
+
+            footer {
+                position: relative;
+            }
+        } */
+
         
 
         
@@ -252,12 +291,12 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul class="header-nav">
+        <nav class="header-nav">
+            <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Store</a></li>
             </ul>
-            <ul class="header-nav">
+            <ul>
                 <li class="header-small"><a href="#">Gmail</a></li>
                 <li class="header-small"><a href="#">Images</a></li>
                 <i class="icon app-icon">apps</i>
@@ -280,17 +319,19 @@
     <footer >
         <nav class="footer-nav">
             <ul class="footer-left">
-                <li><a href="#">Advertising</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">How Search works</a></li>
+                <li class="footer-text"><a href="#">Advertising</a></li>
+                <li class="footer-text"><a href="#">Business</a></li>
+                <li class="footer-text"><a href="#">How Search works</a></li>
             </ul>
             <div class="footer-center">
-                <p>Carbon neutral since 2007</p>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC" 
+                alt="A green leaf" width= "13px">
+                <p class="footer-text">Carbon neutral since 2007</p>
             </div>
             <ul class="footer-right">
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Settings</a></li>
+                <li class="footer-text"><a href="#">Privacy</a></li>
+                <li class="footer-text"><a href="#">Terms</a></li>
+                <li class="footer-text"><a href="#">Settings</a></li>
             </ul>
         </nav>
     </footer>

@@ -48,6 +48,7 @@
 
         a {
             text-decoration: none;
+            
             color: black;
         }
 
@@ -59,12 +60,21 @@
         }
 
         .footer-nav ul > li > a, p {
-            color: rgb(124, 124, 124);            
+            color: rgb(124, 124, 124);
+                        
         }
 
         nav > ul > li:hover {
-            text-decoration: underline;
+            text-decoration: underline;   
+        }
+        
+        .header-nav > ul > li:hover {
+            
+            text-decoration-color: black;
+        }
 
+        .footer-nav > ul > li:hover {
+            text-decoration-color: rgb(124, 124, 124);
         }
 
         .header-small {
@@ -100,7 +110,7 @@
             border-radius: 25px;
             font-size: 1rem;
             border: 1px solid rgba(211,211,211,0.8);
-            padding: .7rem 3rem .9rem;
+            padding: .8rem 3rem .9rem;
         }
 
         .search-input:hover {
@@ -182,29 +192,25 @@
             margin: 0 .25rem;  
         }
 
-
-
-        footer {
+        .footer-nav {
             display: flex;
-            flex-direction: column;
             background-color: rgb(240, 240, 240);
             position: fixed;
             bottom: 0;
             width: 100%;
             flex-wrap: wrap;
+            padding: 0.5rem 1.5rem;
+            justify-content: space-between;
         }
 
-        footer > nav > ul > li {
+        .footer-text {
             padding: 0.5rem 1rem;
         }
-
 
         .footer-left {
             display: flex;
             justify-content: flex-start;
-            /* padding-left: 1.5rem; */
             align-items: center;
-            min-width: 20%;
             order: 1;
         }
 
@@ -212,34 +218,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* padding-right: 8rem; */
-            order: 2;
-            min-width: 50vw;
-            
+            order: 2;            
         }
 
         .footer-right {
             display: flex;
             justify-content: flex-end;
-            /* padding-right: 1.5rem; */
             align-items: center;
-            /* min-width: 20%; */
             order: 3;
         }
-
-        .footer-nav {
-            padding: 0.5rem 1.5rem;
-        }
-
                 
-        @media (max-width: 900px) {
+        @media (max-width: 1200px) {
             .footer-center {
-                width: 50vw;
-                justify-content: center;
+                /* position: relative; */
+                order: 0;
+                width: 100%;
             }
-
+            .footer-nav {
+                justify-content: space-evenly;
+            }
         }
-         
+                                
         @media (max-width: 600px) {
             .footer-nav {
                 flex-direction: column;
@@ -248,12 +247,9 @@
             .footer-right {
                 justify-content: center;
             }
-            .footer-center {
-                order: 0;
-            }
         } 
 
-        @media (max-height: 600px) {
+        /* @media (max-height: 600px) {
             body {
                 overflow-x: hidden;
             }
@@ -265,7 +261,7 @@
             footer {
                 position: relative;
             }
-        }
+        } */
 
         /* @media (max-height: 570px) and (max-width: 630px) {
             body {
@@ -317,25 +313,23 @@
         </div>
     </div>
     <footer >
-        <nav class="footer-nav">
+        <nav class="footer-nav">          
             <ul class="footer-left">
                 <li class="footer-text"><a href="#">Advertising</a></li>
                 <li class="footer-text"><a href="#">Business</a></li>
                 <li class="footer-text"><a href="#">How Search works</a></li>
+            </ul>                       
+            <ul class="footer-right">                
+                <li class="footer-text"><a href="#">Privacy</a></li>
+                <li class="footer-text"><a href="#">Terms</a></li>
+                <li class="footer-text"><a href="#">Settings</a></li>                
             </ul>
             <div class="footer-center">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC" 
                 alt="A green leaf" width= "13px">
-                <p class="footer-text">Carbon neutral since 2007</p>
+                <p>Carbon neutral since 2007</p>
             </div>
-            <ul class="footer-right">
-                <li class="footer-text"><a href="#">Privacy</a></li>
-                <li class="footer-text"><a href="#">Terms</a></li>
-                <li class="footer-text"><a href="#">Settings</a></li>
-            </ul>
         </nav>
     </footer>
-   
-    
 </body>
 </html>

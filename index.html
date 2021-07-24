@@ -59,11 +59,6 @@
             padding-left: 1rem;
         }
 
-        .footer-nav ul > li > a, p {
-            color: rgb(124, 124, 124);
-                        
-        }
-
         nav > ul > li:hover {
             text-decoration: underline;   
         }
@@ -71,10 +66,6 @@
         .header-nav > ul > li:hover {
             
             text-decoration-color: black;
-        }
-
-        .footer-nav > ul > li:hover {
-            text-decoration-color: rgb(124, 124, 124);
         }
 
         .header-small {
@@ -207,10 +198,20 @@
             padding: 0.5rem 1rem;
         }
 
+        .footer-nav ul > li > a, p {
+            color: rgb(124, 124, 124);
+                        
+        }
+
+        .footer-nav > ul > li:hover {
+            text-decoration-color: rgb(124, 124, 124);
+        }
+
         .footer-left {
             display: flex;
             justify-content: flex-start;
             align-items: center;
+            min-width: 30%;
             order: 1;
         }
 
@@ -225,10 +226,12 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            min-width: 30%;
             order: 3;
         }
                 
         @media (max-width: 1200px) {
+            
             .footer-center {
                 /* position: relative; */
                 order: 0;
@@ -240,6 +243,7 @@
         }
                                 
         @media (max-width: 600px) {
+            
             .footer-nav {
                 flex-direction: column;
             }
@@ -249,7 +253,8 @@
             }
         } 
 
-        /* @media (max-height: 600px) {
+        @media (max-height: 600px) {
+            
             body {
                 overflow-x: hidden;
             }
@@ -258,10 +263,16 @@
                 margin-bottom: 2rem;
             }
 
-            footer {
+            .footer-nav {
                 position: relative;
             }
-        } */
+        }
+
+        @media (max-height: 500px) {
+            
+            .logo {
+                margin-top: 1vh;
+            }
 
         /* @media (max-height: 570px) and (max-width: 630px) {
             body {
